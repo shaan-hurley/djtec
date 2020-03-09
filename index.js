@@ -9,9 +9,13 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars')
 
-app.get('/', (req, res)=> {
-    res.render('home')
-})
+
+
+
+
+
+require('./controllers/home.js')(app);
+
 
 app.listen(port, () => {
     console.log('Reddit listening on port localhost:3000!');

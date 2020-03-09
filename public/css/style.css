@@ -36,14 +36,14 @@ a:hover {
 
 .scroll-list {
     width: 70%;
-    max-width: 700px;
+    max-width: 375px;
     padding: 25px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     .scroll-list {
         margin-top: 20px;
     }
@@ -51,7 +51,7 @@ a:hover {
 
 .scroll-list__wrp {
     width: 60%;
-    height: 700px;
+    height: 700;
     overflow: auto;
     padding: 50px;
     box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45);
@@ -71,7 +71,7 @@ a:hover {
     display: none !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     .scroll-list__wrp {
         padding: 25px;
     }
@@ -113,39 +113,6 @@ a:hover {
 .scroll-list__item:last-child {
     margin-bottom: 155px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .blck {
     padding: 0px;
@@ -217,3 +184,6 @@ img {
         transform: translatey(0px);
     }
 }
+
+
+
