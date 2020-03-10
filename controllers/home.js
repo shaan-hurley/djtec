@@ -10,13 +10,5 @@ module.exports = (app) => {
         });
     })
 
-    app.get('/', (req, res) => {
-        res.render('login', {
-            isListEnabled: true,
-            style: 'login.css'
-            
-        });
-    })
-
 
 }
