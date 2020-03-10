@@ -18,7 +18,7 @@ require('./controllers/home.js')(app);
 
 
 app.listen(port, () => {
-    console.log('Reddit listening on port localhost:3000!');
+    console.log('Connected to localhost:3000!');
 });
 
 module.exports = app;
