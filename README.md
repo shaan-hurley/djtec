@@ -5,24 +5,24 @@
 Dates 3/16-3/25
 
 **My Name:** 
-
+Farhan Begg, Shaan Hurley, Youssef Sawiris
 
 **Project Name:** 
-
+DjTec
 
 **Is your project New or Old?**
-
+New
 
 **Is your project Solo or Team?**
 
-
+Team
 ## Description
 
-**Write a paragraph summary of the current status of your project, what you hope to achieve during the intensive, how and why**
+**DjTec is a web app that allows users to see the next song the DJ is going to play, and the users can vote songs up or down to let the dj know what to play next**
 
 ## Challenges I Anticipate
 
-**List out the challenges you anticipate for completing this project**
+**Connecting back-end and front-end. Implementing the spotify api, and user authentication for dj and users.**
 
 ## Skateboard
 
@@ -43,20 +43,19 @@ CRUD accounts using MAC addresses, QR code scanner
 
 **Each teammate must achieve 2 of 3 of their self-set personal achievement goals. If you're not on a team, delete the other teammate sections as needed.**
 
-### Teammate 1
+### Teammate 1: Farhan Begg
 
 Implement CRUD Scroll Feed, List of music
 Responsive Design
 Implement the ability to vote on a song
+Ability to search for songs
+Designing users perspective U.I.
+### Teammate 2: Shaan Hurley
+1. Design user interface for Dj
+1. Design view for Dj searching songs
+1. Design Dj queue list and user song request
 
-
-### Teammate 2
-
-1. Goal 1
-1. Goal 2
-1. Goal 3
-
-### Teammate 3
+### Teammate 3: Youssef Sawiris
 Use the Passport.js  api to allow DJ’s to sign in to their Spotify  
 Code routes to add songs to a DJs queue 
 Code the backend to allow users to vote song up/down depending on preference
@@ -66,7 +65,7 @@ Code the backend to allow users to vote song up/down depending on preference
 
 ## Wireframes
 
-**Insert wireframe pictures here**
+![picture](wireframe.png)
 
 
 ## Evaluation
