@@ -65,7 +65,7 @@ Code the backend to allow users to vote song up/down depending on preference
 
 ## Wireframes
 
-![picture](wireframe.png)
+![picture](public/images/wireframe.png)
 
 
 ## Evaluation
