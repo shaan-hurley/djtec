@@ -29,12 +29,14 @@ Dates 3/16-3/25
 **ONE SINGLE aspect of product. Consider: build backend for SPD 1.2 front end, CRUD one resource, use API or library, authentication etc.**
 
 **Start coding and finish “Skateboard” feature before beginning “Bike”.** 
+Login for Dj, implement passport api, crud music playlist
 
 ## Bike
 **ONE additional features that get you closer to your idealized product. Examples: CRUD 2nd resource, add comments, API use, authentication, library use** 
-
+Responsive front-end, crud accounts, implement spotify api
 ## Car
 **ONE additional feature** 
+CRUD accounts using MAC addresses, QR code scanner
 
 
 ## Personal Achievement Goals:
@@ -43,9 +45,10 @@ Dates 3/16-3/25
 
 ### Teammate 1
 
-1. Goal 1
-1. Goal 2
-1. Goal 3
+Implement CRUD Scroll Feed, List of music
+Responsive Design
+Implement the ability to vote on a song
+
 
 ### Teammate 2
 
@@ -54,16 +57,11 @@ Dates 3/16-3/25
 1. Goal 3
 
 ### Teammate 3
+Use the Passport.js  api to allow DJ’s to sign in to their Spotify  
+Code routes to add songs to a DJs queue 
+Code the backend to allow users to vote song up/down depending on preference
 
-1. Goal 1
-1. Goal 2
-1. Goal 3
 
-### Teammate 4
-
-1. Goal 1
-1. Goal 2
-1. Goal 3
 
 
 ## Wireframes
