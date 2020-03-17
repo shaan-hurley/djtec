@@ -68,3 +68,15 @@ $(document).ready(function () {
 
 
 
+const s = document.getElementById('search'),
+    sC = document.getElementById('searchCont');
+let open = false;
+s.addEventListener('click', () => {
+    if (!open) {
+        sC.classList.add('open');
+        document.getElementById('input').focus();
+    } else {
+        sC.classList.remove('open');
+    }
+    open = !open;
+});
