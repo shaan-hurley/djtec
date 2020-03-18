@@ -1,33 +1,32 @@
 {
-    "name": "djtec",
-    "version": "1.0.0",
-    "description": "music recommendation software",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "async": "^3.2.0",
-        "consolidate": "~0.10.0",
-        "ejs": "^3.0.1",
-        "express": "^4.17.1",
-        "express-handlebars": "^3.1.0",
-        "express-session": "^1.17.0",
-        "express-validator": "^5.3.1",
-        "mongoose": "^5.9.2",
-        "node-spotify-api": "^1.1.1",
-        "nodemon": "^2.0.2",
-        "passport": "^0.2.2",
-        "passport-oauth": "^1.0.0",
-        "passport-spotify": "^1.1.0",
-        "socket.io": "^2.3.0",
-        "swig": "^1.3.2"
-    },
-    "devDependencies": {
-        "handlebars": "^4.5.0"
-    }
-
+  "name": "djtec",
+  "version": "1.0.0",
+  "description": "music recommendation software",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "consolidate": "~0.10.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^5.3.1",
+    "mongoose": "^5.9.2",
+    "node-spotify-api": "^1.1.1",
+    "nodemon": "^2.0.2",
+    "passport": "^0.2.2",
+    "passport-oauth": "^1.0.0",
+    "passport-spotify": "^1.1.0",
+    "socket.io": "^2.3.0",
+    "swig": "^1.3.2"
+  },
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  }
 }
