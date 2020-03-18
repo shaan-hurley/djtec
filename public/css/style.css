@@ -281,8 +281,8 @@ a {
     display: inline-block;
     top: 50px;
     left: 80%;
-    -webkit-transform: translate(-90%, 0%);
-            transform: translate(-90%, 0%);
+    -webkit-transform: translate(-90%, 30%);
+            transform: translate(-90%, 30%);
     box-sizing: border-box;
   }
   .search-bar input {
