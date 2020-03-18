@@ -68,8 +68,6 @@ app.use(passport.session());
 require('./controllers/login.js')(app);
 require('./controllers/home.js')(app);
 
-
-
 app.listen(port, () => {
     console.log('Connected to localhost:3000!');
 });
