@@ -5,11 +5,10 @@ const express = require('express'),
 
 const SpotifyStrategy = require('passport-spotify').Strategy;
 
-var path = require('path');
-
 const app = express();
 const port = 3000;
 const exphbs = require('express-handlebars');
+
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
 //   serialize users into and deserialize users out of the session. Typically,
@@ -43,12 +42,8 @@ passport.use(
     )
 );
 
+//uncomment this when pushing heroku
 // const port = process.env.PORT
-
-
-
-
-
 // const mongoose = require('mongoose')
 // const mongo_uri = process.env.MONGODB_URI
 // mongoose.connect(mongo_uri)
@@ -60,9 +55,11 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars')
 
 
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -71,27 +68,7 @@ app.use(passport.session());
 require('./controllers/login.js')(app);
 require('./controllers/home.js')(app);
 
-app.get(
-    '/auth/spotify',
-    passport.authenticate('spotify', {
-        scope: ['user-read-email', 'user-read-private'],
-        showDialog: true
-    }),
-    function(req, res) {
-        // The request will be redirected to spotify for authentication, so this
-        // function will not be called.
-    }
-);
-app.get(
-    '/auth/spotify/callback',
-    passport.authenticate('spotify', { failureRedirect: '/' }),
-    function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/home');
-    }
-);
 
-// app.listen(port)
 
 app.listen(port, () => {
     console.log('Connected to localhost:3000!');
