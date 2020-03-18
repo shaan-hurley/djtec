@@ -201,7 +201,7 @@ body .search .search-input {
   background: transparent;
 }
 body .search .search-icon {
-    color: #555;
+  color: #555;
   font-size: 30px;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
