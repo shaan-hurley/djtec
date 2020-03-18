@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+// const port = 3000;
 const exphbs = require('express-handlebars');
 
 // const port = process.env.PORT
@@ -9,9 +9,9 @@ const exphbs = require('express-handlebars');
 
 
 
-// const mongoose = require('mongoose')
-// const mongo_uri = process.env.MONGODB_URI
-// mongoose.connect(mongo_uri)
+const mongoose = require('mongoose')
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
 
 
 app.use(express.static('public'));
