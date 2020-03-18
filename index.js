@@ -3,7 +3,7 @@ const app = express();
 // const port = 3000;
 const exphbs = require('express-handlebars');
 
-// const port = process.env.PORT
+const port = process.env.PORT
 
 
 
