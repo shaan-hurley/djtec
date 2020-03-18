@@ -43,19 +43,28 @@ passport.use(
     )
 );
 
+// const port = process.env.PORT
+
+
+
+
+
+// const mongoose = require('mongoose')
+// const mongo_uri = process.env.MONGODB_URI
+// mongoose.connect(mongo_uri)
+
 
 app.use(express.static('public'));
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars')
 
+
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 
 
@@ -81,6 +90,8 @@ app.get(
         res.redirect('/home');
     }
 );
+
+// app.listen(port)
 
 app.listen(port, () => {
     console.log('Connected to localhost:3000!');
