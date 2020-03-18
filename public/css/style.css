@@ -38,7 +38,7 @@ a:hover {
 }
 
 .scroll-list {
-    width: 70%;
+    width: 100%;
     max-width: 700px;
     padding: 25px;
     margin-top: 50px;
@@ -49,7 +49,7 @@ a:hover {
 
 .scroll-list__wrp {
     position: relative;
-    width: 60%;
+    width: 100%;
     height: 700px;
     overflow: auto;
     padding: 50px;
@@ -127,11 +127,11 @@ img {
 }
 
 @media screen and (max-width: 812px) {
-    .wrapper {
+    /* .wrapper {
         display: flex;
         align-items: center;
         min-height: 100vh;
-    }
+    } */
     /* .scroll-list {
         width: 100%;
         max-width: 700px;
@@ -142,10 +142,11 @@ img {
         margin-bottom: 50px;
     } */
     .scroll-list {
+        position: relative;
+        top: -100px;
         width: 100%;
-        max-width: 700px;
-        padding: 25px;
-        margin-top: 50px;
+        max-width: 400px;
+        margin-top: 0px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -159,13 +160,15 @@ img {
     } */
 
     .scroll-list__wrp {
+        position: relative;
+        top: 10%;
         width: 100%;
-        height: 700px;
+        height: 300px;
         overflow: auto;
         padding: 50px;
-        /* box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45); */
+        box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45); 
         background: black;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         background-color: black;
     }
     .scroll-list__wrp .scrollbar-track {
@@ -193,8 +196,8 @@ body .search {
   padding: 8px;
   border-radius: 50%;
   position: absolute;
-  top: 10%;
-  left: 70%;
+  top: 11%;
+  left: 85%;
   margin: -25px 0 0 -25px;
   cursor: pointer;
   -webkit-transition: 0.25s ease;
@@ -263,7 +266,7 @@ body .search .search-icon {
     height: 50px;
     margin-left: -120px;
     position: absolute;
-    top: 20px;
+    top: 50px;
     color: white;
     text-align: center;
     line-height: 50px;
@@ -389,25 +392,25 @@ body .search .search-icon {
   .menu-open:checked ~ .menu-item:nth-child(3) {
     -webkit-transition-duration: 190ms;
             transition-duration: 190ms;
-    -webkit-transform: translate3d(50px, 0, 0);
-            transform: translate3d(50px, 0, 0);
+    -webkit-transform: translate3d(40px, 0, 0);
+            transform: translate3d(40px, 0, 0);
   }
   .menu-open:checked ~ .menu-item:nth-child(4) {
     -webkit-transition-duration: 290ms;
             transition-duration: 290ms;
-    -webkit-transform: translate3d(100px, 0, 0);
-            transform: translate3d(100px, 0, 0);
+    -webkit-transform: translate3d(90px, 0, 0);
+            transform: translate3d(90px, 0, 0);
   }
   .menu-open:checked ~ .menu-item:nth-child(5) {
     -webkit-transition-duration: 370ms;
             transition-duration: 370ms;
-    -webkit-transform: translate3d(150px, 0, 0);
-            transform: translate3d(150px, 0, 0);
+    -webkit-transform: translate3d(140px, 0, 0);
+            transform: translate3d(140px, 0, 0);
   }
   .menu-open:checked ~ .menu-item:nth-child(6) {
     -webkit-transition-duration: 470ms;
             transition-duration: 470ms;
-    -webkit-transform: translate3d(200px, 0, 0);
-            transform: translate3d(200px, 0, 0);
+    -webkit-transform: translate3d(190px, 0, 0);
+            transform: translate3d(190px, 0, 0);
   }
   
