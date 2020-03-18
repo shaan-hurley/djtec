@@ -8,7 +8,7 @@ const SpotifyStrategy = require('passport-spotify').Strategy;
 var path = require('path');
 
 const app = express();
-const port = 3000;
+// const port = 3000;
 const exphbs = require('express-handlebars');
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -17,22 +17,22 @@ const exphbs = require('express-handlebars');
 //   the user by ID when deserializing. However, since this example does not
 //   have a database of user records, the complete spotify profile is serialized
 //   and deserialized.
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 
 passport.use(
     new SpotifyStrategy({
-            clientID: '714e98040b9d4e539293952098fc18e6',
-            clientSecret: '936f88c36750430e99fae3ba100aaaf0',
-            callbackURL: 'http://localhost:3000/auth/spotify/callback'
-        },
-        function(accessToken, refreshToken, expires_in, profile, done) {
-            process.nextTick(function() {
+        clientID: '714e98040b9d4e539293952098fc18e6',
+        clientSecret: '936f88c36750430e99fae3ba100aaaf0',
+        callbackURL: 'http://localhost:3000/auth/spotify/callback'
+    },
+        function (accessToken, refreshToken, expires_in, profile, done) {
+            process.nextTick(function () {
                 // To keep the example simple, the user's spotify profile is returned to
                 // represent the logged-in user. In a typical application, you would want
                 // to associate the spotify account with a user record in your database,
@@ -43,15 +43,15 @@ passport.use(
     )
 );
 
-// const port = process.env.PORT
+const port = process.env.PORT
 
 
 
 
 
-// const mongoose = require('mongoose')
-// const mongo_uri = process.env.MONGODB_URI
-// mongoose.connect(mongo_uri)
+const mongoose = require('mongoose')
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
 
 
 app.use(express.static('public'));
@@ -77,7 +77,7 @@ app.get(
         scope: ['user-read-email', 'user-read-private'],
         showDialog: true
     }),
-    function(req, res) {
+    function (req, res) {
         // The request will be redirected to spotify for authentication, so this
         // function will not be called.
     }
@@ -85,7 +85,7 @@ app.get(
 app.get(
     '/auth/spotify/callback',
     passport.authenticate('spotify', { failureRedirect: '/' }),
-    function(req, res) {
+    function (req, res) {
         // Successful authentication, redirect home.
         res.redirect('/home');
     }
