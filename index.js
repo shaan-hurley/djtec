@@ -4,7 +4,7 @@ const app = express();
 const exphbs = require('express-handlebars');
 
 const port = process.env.PORT
-app.listen(port)
+
 
 
 
@@ -25,6 +25,7 @@ app.set('view engine', 'handlebars')
 require('./controllers/login.js')(app);
 require('./controllers/home.js')(app);
 
+// app.listen(port)
 app.listen(port, () => {
     console.log('Connected to localhost:3000!');
 });
