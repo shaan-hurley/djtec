@@ -29,6 +29,8 @@ passport.use(
             clientID: '714e98040b9d4e539293952098fc18e6',
             clientSecret: '936f88c36750430e99fae3ba100aaaf0',
             callbackURL: 'http://localhost:3000/auth/spotify/callback'
+                //Uncomment when pushing to heroku, make sure to comment out the line above
+                //callbackURL: 'https://dj-tech.herokuapp.com/auth/spotify/callback'
         },
         function(accessToken, refreshToken, expires_in, profile, done) {
             process.nextTick(function() {
