@@ -1,7 +1,7 @@
 const express = require('express'),
     session = require('express-session'),
-    passport = require('passport');
-swig = require('swig');
+    passport = require('passport'),
+    swig = require('swig');
 
 const SpotifyStrategy = require('passport-spotify').Strategy;
 
