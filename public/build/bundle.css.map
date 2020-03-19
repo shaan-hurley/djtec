@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../Player.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import { createEventDispatcher } from \"svelte\";\n\n  const dispatch = createEventDispatcher();\n\n  export let artist;\n  export let title;\n  export let points = 0;\n  let showControls = false;\n\n  const addPoint = () => (points += 1);\n  const removePoint = () => (points -= 1);\n  const toggleControls = () => (showControls = !showControls);\n  const onDelete = () => dispatch(\"removeplayer\", artist);\n</script>\n\n<style>\n  h1 {\n    color: #204f6e;\n  }\n\n  h3 { \n    margin-bottom: 10px;\n  }\n</style>\n\n<div class=\"card\">\n  <h1>\n     {artist} - {title}\n    <button class=\"btn btn-sm\" on:click={toggleControls}>\n      {#if showControls}-{:else}+{/if}\n    </button>\n    <button class=\"btn btn-danger btn-sm\" on:click={onDelete}>x</button>\n  </h1>\n  <h3>Votes: {points}</h3>\n  {#if showControls}\n    <button class=\"btn\" on:click={addPoint}>+</button>\n    <button class=\"btn btn-dark\" on:click={removePoint}>-</button>\n    <input type=\"text\" bind:value={points} />\n  {/if}\n</div>\n"
+  ],
+  "names": [],
+  "mappings": "AAiBE,EAAE,cAAC,CAAC,AACF,KAAK,CAAE,OAAO,AAChB,CAAC,AAED,EAAE,cAAC,CAAC,AACF,aAAa,CAAE,IAAI,AACrB,CAAC"
+}

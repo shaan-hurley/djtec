@@ -18,16 +18,22 @@
 
 <main> 
 	<div class="container">
-	<AddPlayer on:addplayer={addPlayer} />
+	<!-- <AddPlayer on:addplayer={addPlayer} />
 	{#if players.length === 0}
 		<p>No Songs</p>
 	{:else}
+	 <div class="wrapper">
+        <div class="scroll-list__wrp js-scroll-content js-scroll-list">
 		{#each players as player}
 		<Player
 			artist={player.artist}
 			title={player.title}
 			on:removeplayer={removePlayer} />
 		{/each}
-	{/if}
+		</div>
+	</div>
+	{/if} -->
+
+	
 	</div>
 </main>

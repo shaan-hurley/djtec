@@ -59,7 +59,7 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars')
 
-
+ app.use(express.static(__dirname + '/public'));
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 // Initialize Passport!  Also use passport.session() middleware, to support
 // persistent login sessions (recommended).
@@ -70,7 +70,7 @@ app.use(passport.session());
 
 require('./controllers/login.js')(app);
 require('./controllers/home.js')(app);
-
+require('./controllers/dj-home.js')(app);
 app.get(
     '/auth/spotify',
     passport.authenticate('spotify', {
