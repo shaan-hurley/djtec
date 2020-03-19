@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var Scrollbar = window.Scrollbar;
 
     Scrollbar.use(window.OverscrollPlugin);
@@ -14,7 +14,7 @@ $(document).ready(function () {
     listItem.eq(0).addClass('item-focus');
     listItem.eq(1).addClass('item-next');
 
-    customScroll.addListener(function (status) {
+    customScroll.addListener(function(status) {
 
         var $content = $('.js-scroll-content');
 
@@ -62,11 +62,7 @@ $(document).ready(function () {
         }
     });
 
-
-
 });
-
-
 
 const s = document.getElementById('search'),
     sC = document.getElementById('searchCont');
@@ -80,12 +76,3 @@ s.addEventListener('click', () => {
     }
     open = !open;
 });
-
-
-
-
-
-
-
-
-
