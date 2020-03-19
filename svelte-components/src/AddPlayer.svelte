@@ -3,23 +3,25 @@
 
   const dispatch = createEventDispatcher();
 
-  let song = {
+  let player = {
     artist: "",
-    title: ""
+    title: "",
+    points: 0
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    dispatch("addplayer", song);
-    song = {
+    dispatch("addplayer", player);
+    player = {
       artist: "",
-      title: ""
+      title: "",
+      points: 0
     };
   };
 </script>
 
 <form on:submit={onSubmit} class="grid-3">
-  <input type="text" placeholder="Artist Name" bind:value={song.artist} />
-  <input type="text" placeholder="Song title" bind:value={song.title} />
-  <input type="submit" class="btn btn-primary" value="Enter" />
+  <input type="text" placeholder="Artist" bind:value={player.artist} />
+  <input type="text" placeholder="Title" bind:value={player.title} />
+  <input type="submit" class="btn btn-primary" value="Add Song" />
 </form>

@@ -12,7 +12,7 @@
   };
  
   const removePlayer = e => {
-    players = players.filter(player => player.name !== e.detail);
+    players = players.filter(player => player.artist !== e.detail);
   };
 </script>
 
@@ -24,8 +24,8 @@
 	{:else}
 		{#each players as player}
 		<Player
-			name={player.name}
-			points={player.points}
+			artist={player.artist}
+			title={player.title}
 			on:removeplayer={removePlayer} />
 		{/each}
 	{/if}
