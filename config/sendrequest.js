@@ -107,4 +107,37 @@ $(document).ready(function() {
         });
         $('#reload').load(location.href + ' #reload');
     });
+    $('#get_playlist').on('click', function() {
+        let spotifytoken = $('#user_token1').val()
+
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/playlists',
+            type: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + spotifytoken
+            },
+            success: function(data) {
+                console.log('*******************')
+                console.log(data);
+                let htmlstr = ''
+                    // data.tracks.items.forEach(song => {
+                    //     htmlstr += `
+                    //     <div class="row">
+                    //         <img class="header-image" src='${song.album.images[2].url}' alt="logo">
+                    //         <h5>${song.name}</h>
+                    //         <h6>by:${song.artists[0].name}</h6>
+                    //         <button 
+                    //             data-uri="${song.uri}"
+                    //             type="submit" 
+                    //             class="btn btn-success change_song">Accept</button>
+                    //     </div>`
+                    // });
+
+                // el.innerHTML = htmlstr
+            }
+        });
+        $('#reload').load(location.href + ' #reload');
+    });
 });

@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/queue-db";
+const url = "mongodb://localhost/djtec-db";
 mongoose.Promise = global.Promise;
 mongoose.connect(
     url, { useNewUrlParser: true },
