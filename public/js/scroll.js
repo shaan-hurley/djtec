@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var Scrollbar = window.Scrollbar;
 
     Scrollbar.use(window.OverscrollPlugin);
@@ -14,7 +14,7 @@ $(document).ready(function() {
     listItem.eq(0).addClass('item-focus');
     listItem.eq(1).addClass('item-next');
 
-    customScroll.addListener(function(status) {
+    customScroll.addListener(function (status) {
 
         var $content = $('.js-scroll-content');
 
@@ -64,15 +64,22 @@ $(document).ready(function() {
 
 });
 
-const s = document.getElementById('search'),
-    sC = document.getElementById('searchCont');
-let open = false;
-s.addEventListener('click', () => {
-    if (!open) {
-        sC.classList.add('open');
-        document.getElementById('input').focus();
-    } else {
-        sC.classList.remove('open');
-    }
-    open = !open;
+
+
+$(function () {
+    $('#search-menu').removeClass('toggled');
+
+    $('#search-icon').click(function (e) {
+        e.stopPropagation();
+        $('#search-menu').toggleClass('toggled');
+        $("#popup-search").focus();
+    });
+
+    $('#search-menu input').click(function (e) {
+        e.stopPropagation();
+    });
+
+    $('#search-menu, body').click(function () {
+        $('#search-menu').removeClass('toggled');
+    });
 });
