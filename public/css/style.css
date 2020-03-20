@@ -9,6 +9,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     background: black;
+    overflow: hidden !important;
 }
 
 a,
@@ -227,6 +228,49 @@ img {
 
 
 @media screen and (max-width: 812px) {
+
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  
+  .neon {
+    text-align: center;
+    position: relative;
+    top: 90px;
+    margin:  auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-animation: pulse 1s ease-in-out infinite alternate;
+    -webkit-backface-visibility: hidden;
+    text-shadow:  0 0 15px #fff,
+    0 0 .1px rgba(255, 255, 255, 0.2);
+    
+  }
+
+  .neon-2 {
+    text-align: center;
+    position: relative;
+    top: 520px;
+    margin:  auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-animation: pulse 1s ease-in-out infinite alternate;
+    -webkit-backface-visibility: hidden;
+    text-shadow:  0 0 15px #fff,
+    0 0 .1px rgba(255, 255, 255, 0.2);
+    
+  }
+  
+
+     
+    
+  
+  
+
+
     /* .wrapper {
         display: flex;
         align-items: center;
