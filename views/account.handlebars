@@ -6,17 +6,61 @@
 <img src="{{ user.photos }}">  --}}
 
 
-<div class=" card" style="background: transparent; border: 0px;">
-    <div class="row" style="margin: 15px;">
-        <img class="card-img-top " src="{{ passport.photos }}" style="width: 25%; " alt="User Profile">
-        <div class="card-body" style="color: black;">
-            <p>ID: {{ passport.id }}</p>
-            <p>Profile:
-                <a href="{{ passport.profileUrl }}">{{ passort.profileUrl }}</a>
-            </p>
+<div class="mui-row">
+    <div class="mui-col-md-2"  style="padding:25px">
+        <div class="card" style="background: transparent">
+            <div class="card-body" style="color:white">
+                <img class="card-img-top" src="{{ passport.photos }}" style=" max-wdith: 50%; border-radius: 50%;" alt="User Profile">
+                <h4 class="card-title" style="text-align:center">{{ passport.id }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted"><a href="{{ passport.profileUrl }}">{{ passort.profileUrl }}</a></h6>
+            </div>
+        </div>
+    </div>
+    <div class="mui-col-md-4">
+         <div class="card" style="background: transparent">
+            <div class="card-body" style="color:white">
+                <h4 class="card-title" >Playlists</h4>
+                <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
+                 <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
+                <div class="container">
+                    <div id="result" data-test="blahblah">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="mui-col-md-4 float-right">
+       <div class="card" style="background: transparent">
+            <div class="card-body" style="color:white">
+                <h4 class="card-title" >User Requests</h4>
+                {{#if user.request}}
+                {{#each newfriend}}
+                <li style="border-bottom: 1px solid lightgray">
+                        <div>
+                        <h4>{{this.username}}</h4>
+                        </div>
+                        <div>
+                            <div style="width: 50%; display: inline;">
+                            <input type="hidden" name="senderId" id="senderId" value="{{this.userId}}">
+                            <input type="hidden" name="senderName" id="senderName" value="{{this.username}}">
+                            <button type="submit" id="accept_friend" class="btn btn-primary" style="width: 8em">Accept</button>
+                            </div>
+                            <div style="width: 50%;  display: inline;">
+                                <input type="hidden" name="user_Id" id="user_Id" value="{{this.userId}}">
+                            <button type="submit" id="cancel_friend" class="btn btn-primary" style="width: 8em">Cancel</button>
+                            </div>
+                        </div>    
+                </li>
+                {{/each}}
+                {{else}}
+            <h4 >No requests</h4>
+            {{/if}}
+            </div>
         </div>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -29,33 +73,6 @@
         </ul>
     </div>
 </div>
-{{#if user.request}}
-{{#each newfriend}}
-<li style="border-bottom: 1px solid lightgray">
-        <div>
-        <h4>{{this.username}}</h4>
-        </div>
-        <div>
-            <div style="width: 50%; display: inline;">
-            <input type="hidden" name="senderId" id="senderId" value="{{this.userId}}">
-            <input type="hidden" name="senderName" id="senderName" value="{{this.username}}">
-            <button type="submit" id="accept_friend" class="btn btn-primary" style="width: 8em">Accept</button>
-            </div>
-            <div style="width: 50%;  display: inline;">
-                <input type="hidden" name="user_Id" id="user_Id" value="{{this.userId}}">
-            <button type="submit" id="cancel_friend" class="btn btn-primary" style="width: 8em">Cancel</button>
-            </div>
-        </div>    
-</li>
-{{/each}}
-{{else}}
-<div>
-    <h4 style="text-align:center">No requests</h4>
-</div>
-{{/if}}
-
-<input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
-<button type="submit" id="get_playlist" class="btn btn-primary" style="width: 8em">Get Playlist</button>
 
 
 
