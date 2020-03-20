@@ -62,30 +62,23 @@ $(document).ready(function () {
         }
     });
 
-
-
 });
 
+$(function () {
+    $('#search-menu').removeClass('toggled');
 
+    $('#search-icon').click(function (e) {
+        e.stopPropagation();
+        $('#search-menu').toggleClass('toggled');
+        $("#popup-search").focus();
+    });
 
-const s = document.getElementById('search'),
-    sC = document.getElementById('searchCont');
-let open = false;
-s.addEventListener('click', () => {
-    if (!open) {
-        sC.classList.add('open');
-        document.getElementById('input').focus();
-    } else {
-        sC.classList.remove('open');
-    }
-    open = !open;
+    $('#search-menu input').click(function (e) {
+        e.stopPropagation();
+    });
+
+    $('#search-menu, body').click(function () {
+        $('#search-menu').removeClass('toggled');
+    });
 });
-
-
-
-
-
-
-
-
 
