@@ -118,9 +118,6 @@ img {
     font-size: 8px;
 }
 
-
-
-
 * {
   box-sizing: border-box;
 }
@@ -229,10 +226,6 @@ img {
 
 
 
-
-
-
-
 @media screen and (max-width: 812px) {
     /* .wrapper {
         display: flex;
@@ -318,20 +311,7 @@ img {
   }
     
 
-   
-  
 
-
-
-
-
-
-
-
-  a {
-    color: inherit;
-  }
-  
   .menu {
     -webkit-filter: url("#shadowed-goo");
             filter: url("#shadowed-goo");
@@ -495,4 +475,3 @@ img {
     -webkit-transform: translate3d(270px, 0, 0);
             transform: translate3d(270px, 0, 0);
   }
-  

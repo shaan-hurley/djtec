@@ -64,8 +64,6 @@ $(document).ready(function () {
 
 });
 
-
-
 $(function () {
     $('#search-menu').removeClass('toggled');
 
@@ -83,3 +81,4 @@ $(function () {
         $('#search-menu').removeClass('toggled');
     });
 });
+
