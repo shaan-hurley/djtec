@@ -15,39 +15,6 @@ function addFriend(name) {
         }
     })
 }
-
-function getSongsForPlaylist(url,id){
-    let spotifytoken = $('#user_token1').val()
-        $.ajax({
-            url: url,
-            type: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + spotifytoken
-            },
-            success: function(data) {
-                console.log("checking songs data",data);
-                let returnStr = '';
-                returnStr += displaySongsString(data);
-                console.log("checking returnStr",returnStr);
-                $(`#${id} .songs`).replaceWith(returnStr);
-                $(`#${id} .songs`).show();
-            
-            }
-        });
-}
-
-function addEventListenerToPlaylist(){
-    $('.playlist').on('click', function(e){
-        console.log("checking e",e);
-        let id = e.target.id;
-        let url = e.target.dataset.songsurl;
-        console.log("checking url/id",url,id);
-       getSongsForPlaylist(url,id);
-    });
-}
-
 function getPlaylistData(){
     let spotifytoken = $('#user_token1').val()
         $.ajax({
@@ -71,6 +38,79 @@ function getPlaylistData(){
         // $('#reload').load(location.href + ' #reload');
 }
 
+function getSongsForPlaylist(url,id){
+    let spotifytoken = $('#user_token1').val()
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + spotifytoken
+            },
+            success: function(data) {
+                console.log("checking songs data",data);
+                let returnStr = '';
+                returnStr += displaySongsString(data);
+                console.log("checking returnStr",returnStr);
+                $(`#${id} .songs`).replaceWith(returnStr);
+                initScroll();
+                $(`#${id} .songs`).show();
+            
+            }
+        });
+}
+
+function addEventListenerToPlaylist(){
+    $('.playlist').on('click', function(e){
+        console.log("checking e",e);
+        let id = e.target.id;
+        let url = e.target.dataset.songsurl;
+        console.log("checking url/id",url,id);
+       getSongsForPlaylist(url,id);
+    });
+}
+
+//this function takes the data returned from playlists call,  and makes a row for each playlist
+function displayPlaylistsString(data){
+    let returnStr = `<div class="wrapper" >
+    <div class="scroll-list">
+    <div class="scroll-list__wrp js-scroll-content js-scroll-list">`;
+    
+    data.items.forEach(item =>{
+
+        returnStr += `
+        
+        <div class=" playlist scroll-list__item js-scroll-list-item" id="${item.id}">
+            <div class="row ">
+                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; height:250px; border-radius: 50%; margin-left:5%" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
+            </div>
+            <div class="row">
+                <ul class="songs" style="display:none">
+                </ul>
+            </div>
+        </div>
+        `
+        
+    });
+
+    // <div class="card playlist" id="${item.id}" >
+    //         <div class="card-body" style="color:black">
+    //             <h4 class="card-title">
+    //             ${item.name}
+    //             </h4>
+    //             <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; height:250px; border-radius: 50%; margin-left:5%" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
+    //             <h6 class="card-subtitle mb-2 text-muted">${item.tracks.total} songs in this playlist</h6>
+
+    //             <ul class="songs" style="display:none">
+
+    //             </ul>
+    //         </div>
+    //     </div>
+   
+    return returnStr; + `</div></div></div>`
+}
+
 function displaySongsString(data){
     console.log("checking data in displaysongsstring",data);
     let returnStr = '';
@@ -90,34 +130,71 @@ function displaySongsString(data){
 
     return returnStr;
 }
-//this function takes the data returned from playlists call,  and makes a row for each playlist
-function displayPlaylistsString(data){
-    let returnStr = '';
-    
-    data.items.forEach(item =>{
 
-        returnStr += `
-        <div class="row ">
-        <div class="card" id="${item.id}" >
-            <div class="card-body" style="color:black">
-                <h4 class="card-title">
-                ${item.name}
-                </h4>
-                <img class="card-img-top playlist" src="${item.images[0].url}" style="width:250px; height:250px; border-radius: 50%;" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
-                <h6 class="card-subtitle mb-2 text-muted">${item.tracks.total} songs in this playlist</h6>
 
-                <ul class="songs" style="display:none">
-
-                </ul>
-            </div>
-        </div>
-        </div>`
-        
+function initScroll(){
+    var Scrollbar = window.Scrollbar;
+    Scrollbar.use(window.OverscrollPlugin);
+  
+    var customScroll = Scrollbar.init(document.querySelector('.js-scroll-list'), {
+      plugins: {
+        overscroll: true
+      }
     });
-   
-    return returnStr;
+  
+    var listItem = $('.js-scroll-list-item');
+  
+    listItem.eq(0).addClass('item-focus');
+    listItem.eq(1).addClass('item-next');
+  
+    customScroll.addListener(function (status) {
+  
+      var $content = $('.js-scroll-content');
+  
+      var viewportScrollDistance = 0;
+  
+  
+      viewportScrollDistance = status.offset.y;
+      var viewportHeight = $content.height();
+      var listHeight = 0;
+      var $listItems = $content.find('.js-scroll-list-item');
+      for (var i = 0; i < $listItems.length; i++) {
+        listHeight += $($listItems[i]).height();
+      }
+  
+      var top = status.offset.y;
+      // console.log(top);
+      var visibleCenterVertical = 0;
+      visibleCenterVertical = top;
+  
+      var parentTop = 1;
+      var $lis = $('.js-scroll-list-item');
+      var $focusLi;
+      for (var i = 0; i < $lis.length; i++) {
+        var $li = $($lis[i]);
+        var liTop = $li.position().top;
+        var liRelTop = liTop - parentTop;
+  
+        var distance = 0;
+        var distance = Math.abs(top - liRelTop);
+        var maxDistance = $('.js-scroll-content').height() / 2;
+        var distancePercent = distance / (maxDistance / 100);
+  
+  
+        if (liRelTop + $li.parent().scrollTop() > top) {
+          if (!$li.hasClass('item-focus')) {
+            $li.prev().addClass('item-hide');
+            $lis.removeClass('item-focus');
+            $lis.removeClass('item-next');
+          }
+          $li.removeClass('item-hide');
+          $li.addClass('item-focus');
+          $li.next().addClass('item-next');
+          break;
+        }
+      }
+    });
 }
-
 
 $(document).ready(function() {
     $('.friend-add').on('click', function(e) {
