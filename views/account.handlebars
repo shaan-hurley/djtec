@@ -13,11 +13,10 @@
                 <img class="card-img-top" src="{{ passport.photos }}" style=" max-wdith: 50%; border-radius: 50%;" alt="User Profile">
                 <h4 class="card-title" style="text-align:center">{{ passport.id }}</h4>
                 <h6 class="card-subtitle mb-2 text-muted"><a href="{{ passport.profileUrl }}">{{ passort.profileUrl }}</a></h6>
+                
             </div>
         </div>
-    </div>
-    <div class="mui-col-md-4">
-         <div class="card" style="background: transparent">
+        <div class="card" style="background: transparent">
             <div class="card-body" style="color:white">
                 <h4 class="card-title" >Playlists</h4>
                 <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
@@ -26,6 +25,19 @@
                     <div id="result" data-test="blahblah">
 
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mui-col-md-4">
+         <div class="card" style="background: transparent">
+            <div class="card-body" style="color:white">
+                <h4 class="card-title" >Songs</h4>
+                <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
+                 <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
+                <div class="container" id="song-result">
+                        <ul class="songs"
+                        ></ul>
                 </div>
             </div>
         </div>

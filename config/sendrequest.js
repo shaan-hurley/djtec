@@ -39,6 +39,7 @@ function getPlaylistData(){
 }
 
 function getSongsForPlaylist(url,id){
+    $(`#song-result .songs`).hide();
     let spotifytoken = $('#user_token1').val()
         $.ajax({
             url: url,
@@ -53,10 +54,11 @@ function getSongsForPlaylist(url,id){
                 let returnStr = '';
                 returnStr += displaySongsString(data);
                 console.log("checking returnStr",returnStr);
-                $(`#${id} .songs`).replaceWith(returnStr);
-                initScroll();
-                $(`#${id} .songs`).show();
-            
+                $(`#song-result .songs`).replaceWith(returnStr);
+                $(`#song-result .songs`).load();
+                $(`#song-result .songs`).show();
+
+
             }
         });
 }
@@ -74,46 +76,28 @@ function addEventListenerToPlaylist(){
 //this function takes the data returned from playlists call,  and makes a row for each playlist
 function displayPlaylistsString(data){
     let returnStr = `<div class="wrapper" >
-    <div class="scroll-list">
-    <div class="scroll-list__wrp js-scroll-content js-scroll-list">`;
+    <div class="container scroll-list">
+    `;
     
     data.items.forEach(item =>{
 
         returnStr += `
-        
-        <div class=" playlist scroll-list__item js-scroll-list-item" id="${item.id}">
+        <div class="  playlist " id="${item.id}" >
             <div class="row ">
-                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; height:250px; border-radius: 50%; margin-left:5%" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
+                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; max-height:250px; border-radius: 50%; " alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
             </div>
-            <div class="row">
-                <ul class="songs" style="display:none">
-                </ul>
-            </div>
+            
         </div>
         `
         
     });
-
-    // <div class="card playlist" id="${item.id}" >
-    //         <div class="card-body" style="color:black">
-    //             <h4 class="card-title">
-    //             ${item.name}
-    //             </h4>
-    //             <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; height:250px; border-radius: 50%; margin-left:5%" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
-    //             <h6 class="card-subtitle mb-2 text-muted">${item.tracks.total} songs in this playlist</h6>
-
-    //             <ul class="songs" style="display:none">
-
-    //             </ul>
-    //         </div>
-    //     </div>
    
-    return returnStr; + `</div></div></div>`
+    return returnStr + `</div></div>`;
 }
 
 function displaySongsString(data){
     console.log("checking data in displaysongsstring",data);
-    let returnStr = '';
+    let returnStr = '<ul class="songs">';
      data.items.forEach(item =>{
          let imgUrl = item.track.album.images.length > 0 ? item.track.album.images[0].url : "";
         returnStr += `
@@ -125,10 +109,10 @@ function displaySongsString(data){
                 data-uri="${item.track.uri}"
                 type="submit" 
                 class="btn btn-success change_song">Accept</button>
-        <li>`
+        </li>`
     })
 
-    return returnStr;
+    return returnStr + '</ul>';
 }
 
 
