@@ -57,8 +57,7 @@ function getSongsForPlaylist(url,id){
                 $(`#song-result .songs`).replaceWith(returnStr);
                 $(`#song-result .songs`).load();
                 $(`#song-result .songs`).show();
-
-
+                initScroll();
             }
         });
 }
@@ -84,7 +83,7 @@ function displayPlaylistsString(data){
         returnStr += `
         <div class="  playlist " id="${item.id}" >
             <div class="row ">
-                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; max-height:250px; border-radius: 50%; " alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
+                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; max-height:250px; padding: 20px;" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
             </div>
             
         </div>
@@ -102,13 +101,18 @@ function displaySongsString(data){
          let imgUrl = item.track.album.images.length > 0 ? item.track.album.images[0].url : "";
         returnStr += `
         <li>
-            <img class="header-image"  style="height:100px;width:100px"src='${imgUrl}' alt="logo">
-            <h5>${item.track.name}</h>
-            <h6>by:${item.track.artists[0].name}</h6>
-            <button 
-                data-uri="${item.track.uri}"
-                type="submit" 
-                class="btn btn-success change_song">Accept</button>
+            <div>
+                <img class="header-image"  style="height:100px;width:100px"src='${imgUrl}' alt="logo">
+                <h5>${item.track.name}</h>
+                <h6>by:${item.track.artists[0].name}</h6>
+            </div>
+            <div>
+                <button 
+                    data-uri="${item.track.uri}"
+                    type="submit" 
+                    class="btn-outline-success change_song">Add Track
+                </button>
+            </div>
         </li>`
     })
 
