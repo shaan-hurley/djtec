@@ -9,7 +9,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     background: black;
-    overflow: hidden !important;
+    overflow: hidden !important; 
 }
 
 a,
@@ -314,6 +314,7 @@ img {
         background: white;
         margin-bottom: 0px;
         background-color: black;
+        
     }
     .scroll-list__wrp .scrollbar-track {
         display: none !important;
@@ -397,6 +398,7 @@ img {
       background: white;
       margin-bottom: 0px;
       background-color: black;
+      
   }
   .scroll-list__wrp-2 .scrollbar-track-2 {
       display: none !important;
@@ -454,7 +456,7 @@ img {
     height: 50px;
     margin-left: -120px;
     position: absolute;
-    top: 60px;
+    top: 80px;
     color: white;
     text-align: center;
     line-height: 50px;
