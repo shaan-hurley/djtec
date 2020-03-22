@@ -6,13 +6,14 @@
 
 <p class="neon">Dj Playlist</div>
   <p class="neon-2">Song Request</div>
-
+  <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
+  <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
     <div class="wrapper">
       <div class="scroll-list">
 
         <div class="scroll-list__wrp js-scroll-content js-scroll-list">
 
-          <div class="scroll-list__item js-scroll-list-item">
+          <div class="scroll-list__item js-scroll-list-item" id='results'>
             <a href="https://codepen.io/MarioDesigns/">
               <img
                 src="https://images.complex.com/complex/images/c_fill,dpr_auto,q_90,w_920/fl_lossy,pg_1/ebjrkgp7iu5fajw98mzn/lil-uzi-vert-eternal-atake-deluxe-stream"
