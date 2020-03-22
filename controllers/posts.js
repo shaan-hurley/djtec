@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports = (app, ensureAuthenticated) => {
 
@@ -33,19 +34,26 @@ module.exports = (app, ensureAuthenticated) => {
     });
 
     // INDEX
-    app.get('/posts', ensureAuthenticated, (req, res) => {
+    app.get('/posts', ensureAuthenticated, function(req, res) {
         const currentUser = req.user.id;
-        // LOOK UP THE POST
 
-        console.log(req.user)
+        User.findOne({ 'spotifyId': currentUser })
+            .then(user => {
+                if (user.friendsList) {
+                    let friends = user.friendsList
+                    console.log(`friends:${user.friendsList}`)
+                    console.log('this is current user')
+                    console.log(currentUser)
 
-        Post.find({ 'user': currentUser }).populate()
-            .then(post => {
-                console.log(`${post}`)
-                res.render("posts", { post, 'user': currentUser });
+                    res.render("posts", { user, newfriend: user.request, passport: req.user, friends });
+
+                } else {
+                    res.render("posts", { user, newfriend: user.request, passport: req.user });
+                }
             })
             .catch(err => {
                 console.log(err.message);
             });
     });
+
 };
