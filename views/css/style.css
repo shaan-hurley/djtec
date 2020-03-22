@@ -29,6 +29,8 @@ a:hover {
 }
 
 .scroll-list {
+    position: relative;
+    top: -150px;
     width: 100%;
     max-width: 700px;
     padding: 25px;
@@ -41,9 +43,9 @@ a:hover {
 .scroll-list__wrp {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 500px;
     overflow: auto;
-    padding: 50px;
+    padding: 10px;
     /* box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45); */
     margin-bottom: 15px;
     /* background-image: linear-gradient(147deg, #6e0777 0%, #020004 74%); */
@@ -128,10 +130,10 @@ img {
   width: auto;
   position: absolute;
   display: inline-block;
-  top: 70px;
-  left: 80%;
-  -webkit-transform: translate(-90%, 30%);
-          transform: translate(-90%, 30%);
+  top: 52%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
   box-sizing: border-box;
 }
 .search-bar input {
@@ -226,16 +228,128 @@ img {
 }
 
 
+  .scroll-list-2 {
+    position: relative;
+      top: -150px;
+      left: 50px;
+      width: 100%;
+      max-width: 700px;
+      padding: 25px;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    
+  }
+
+/* .scroll-list__wrp {
+  width: 100%;
+  align-items: center;
+  
+  overflow: auto;
+  padding: 50px;
+} */
+
+  .scroll-list__wrp-2 {
+    position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: auto;
+      padding: 10px;
+      /* box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45); */
+      margin-bottom: 15px;
+      /* background-image: linear-gradient(147deg, #6e0777 0%, #020004 74%); */
+      /* background: radial-gradient(ellipse at bottom left,
+              rgba(104, 128, 138, 0.4) 10%,
+              rgba(138, 114, 76, 0) 40%),
+          linear-gradient(to bottom, rgba(57, 173, 219, 0.25), rgba(42, 60, 87, 0.4)),
+          linear-gradient(135deg, #670d10, #092756);
+      */
+  }
+.scroll-list__wrp-2 .scrollbar-track-2 {
+  display: none !important;
+}
+
+.scroll-list__item-2 {
+  width: 100%;
+  height: 80px;
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  background-image: linear-gradient(147deg, #ff7c34 0%, #c31269 74%);
+  transition: all .35s ease-in-out;
+  opacity: 0;
+  transform: scale(0.7);
+  box-shadow: 0px 7px 16px 0px rgba(41, 53, 108, 0.25);
+  box-shadow: 0 5px 15px 0px rgba(255, 254, 254, 0.6);
+  
+}
+.scroll-list__item-2.item-hide {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll-list__item-2.item-focus {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll-list__item-2.item-next {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll-list__item-2.item-next + .scroll-list__item-2 {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll-list__item-2:last-child {
+  margin-bottom: 80px;
+}
+
+.neon {
+  position: relative;
+  left: 350px;
+  top: 60px;
+  margin:  auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-animation: pulse 1s ease-in-out infinite alternate;
+  -webkit-backface-visibility: hidden;
+  text-shadow:  0 0 15px #fff,
+  0 0 .1px rgba(255, 255, 255, 0.2);
+  
+}
+
+.neon-2 {
+  position: relative;
+  top: 30px;
+  left: 1400px;
+  margin:  auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-animation: pulse 1s ease-in-out infinite alternate;
+  -webkit-backface-visibility: hidden;
+  text-shadow:  0 0 15px #fff,
+  0 0 .1px rgba(255, 255, 255, 0.2);
+  
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 @media screen and (max-width: 812px) {
-
-
-  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-  
   .neon {
-    text-align: center;
     position: relative;
-    top: 90px;
+    top: 80px;
+    left: 120px;
     margin:  auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -249,9 +363,9 @@ img {
   }
 
   .neon-2 {
-    text-align: center;
     position: relative;
-    top: 520px;
+    top: 450px;
+    left: 120px;
     margin:  auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -263,13 +377,6 @@ img {
     0 0 .1px rgba(255, 255, 255, 0.2);
     
   }
-  
-
-     
-    
-  
-  
-
 
     /* .wrapper {
         display: flex;
@@ -305,7 +412,7 @@ img {
 
     .scroll-list__wrp {
         position: relative;
-        top: 350px;
+        top: 280px;
         width: 300px;
         height: 200px;
         overflow: auto;
@@ -357,17 +464,13 @@ img {
       width: auto;
       position: absolute;
       display: inline-block;
-      top: 20px;
+      top: 60px;
       left: 80%;
       -webkit-transform: translate(-90%, 30%);
               transform: translate(-90%, 30%);
       box-sizing: border-box;
     }
     
-
-
-
-
     .scroll-list-2 {
       position: relative;
       top: -100px;
@@ -389,7 +492,7 @@ img {
   .scroll-list__wrp-2 {
       position: relative;
       top: -70px;
-      left: -320px;
+      left: -400px;
       width: 300px;
       height: 300px;
       overflow: auto;
@@ -438,8 +541,6 @@ img {
 
   }
     
-
-
   .menu {
     -webkit-filter: url("#shadowed-goo");
             filter: url("#shadowed-goo");
