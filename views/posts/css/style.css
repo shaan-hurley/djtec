@@ -59,7 +59,7 @@ img {
     display: flex;
     align-items: center;
     height: 45%;
-    background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
+    background-image: black;
 }
 
 .scroll-list {
@@ -79,11 +79,11 @@ img {
     overflow: auto;
     padding: 25px;
     box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45);
-    background: #4b1079;
-    background: #4b1079;
+    background: black;
+    background: black;
     margin-bottom: 15px;
     border-radius: 8px;
-    background-image: linear-gradient(147deg, #6e0777 0%, #380c70 74%);
+    background-image: black;
 }
 
 .scroll-list__wrp .scrollbar-track {
@@ -135,7 +135,7 @@ img {
     display: flex;
     align-items: center;
     height: 40%;
-    background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
+    background-image: black;
 }
 
 .scroll-list-2 {
@@ -155,11 +155,10 @@ img {
     overflow: auto;
     padding: 25px;
     box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45);
-    background: #4b1079;
-    background: #4b1079;
+    background: black;
     margin-bottom: 15px;
     border-radius: 8px;
-    background-image: linear-gradient(147deg, #6e0777 0%, #380c70 74%);
+    background-image: black;
 }
 
 .search-bar {
@@ -169,6 +168,12 @@ img {
     -webkit-transform: translate(-50%, 50%);
     transform: translate(-50%, 50%);
     box-sizing: border-box;
+    position: relative;
+    margin-top: 30px;
+    left: 50%;
+    overflow: hidden;
+    height: auto;
+    padding: 0;
 }
 
 .search-bar input {
@@ -319,7 +324,7 @@ img {
     -webkit-filter: url("#shadowed-goo");
     filter: url("#shadowed-goo");
     position: relative;
-    top: 50%;
+    top: 44%;
 }
 
 .menu-item,
@@ -487,4 +492,13 @@ img {
     transition-duration: 470ms;
     -webkit-transform: translate3d(270px, 0, 0);
     transform: translate3d(270px, 0, 0);
+}
+
+@media screen and (max-width: 812px) {
+    .menu {
+        -webkit-filter: url("#shadowed-goo");
+        filter: url("#shadowed-goo");
+        position: relative;
+        top: -4%;
+    }
 }

@@ -4,52 +4,7 @@
     <a href=" {{ user.profileUrl }}">{{ user.profileUrl }}</a>
 </p>
 <img src="{{ user.photos }}">  --}}
-<<<<<<< HEAD
-
-
-<div class="mui-row">
-    <div class="mui-col-md-2"  style="padding:25px">
-        <div class="card" style="background: transparent">
-            <div class="card-body" style="color:white">
-                <img class="card-img-top" src="{{ passport.photos }}" style=" max-wdith: 50%; border-radius: 50%;" alt="User Profile">
-                <h4 class="card-title" style="text-align:center">{{ passport.id }}</h4>
-                <h6 class="card-subtitle mb-2 text-muted"><a href="{{ passport.profileUrl }}">{{ passort.profileUrl }}</a></h6>
-                
-            </div>
-        </div>
-        <div class="card" style="background: transparent">
-            <div class="card-body" style="color:white">
-                <h4 class="card-title" style="text-align: center;">Playlists</h4>
-                <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
-                 <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
-                <div class="container">
-                    <div id="result" data-test="blahblah">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mui-col-md-4">
-         <div class="card" style="background: transparent">
-            <div class="card-body" style="color:white">
-                <h4 class="card-title" style="text-align: center;">Songs</h4>
-                <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
-                 <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
-                <div class="container" id="song-result">
-                        <ul class="songs">
-
-                        </ul>
-                </div>
-            </div>
-        </div>
-    </div> 
-
-<div class="wrapper">
-    <div class="scroll-list__wrp js-scroll-content js-scroll-list">
-=======
 <div class="container">
-    <p class="neon">Dj Playlist</p>
     <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
     <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
     <div class="wrapper">
@@ -60,7 +15,6 @@
           </div>
         </div>
       </div>
->>>>>>> f1efe24b987038d7f7ee587cc74e2b8623f158ba
     </div>
     <div class="wrapper-2">
       <div class="scroll-list-2">
@@ -71,6 +25,46 @@
         </div>
       </div>
     </div>
+    <div class="column">
+      <div class="wrapper">
+        <div class="scroll-list">
+          <div class="scroll-list__wrp js-scroll-content">
+            <div class="scroll-list__item js-scroll-list-item">
+              <a href="https://codepen.io/MarioDesigns/">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Ready_To_Die.jpg/220px-Ready_To_Die.jpg"
+                  alt="Skytsunami" />
+              </a>
+              <div class="song">
+                <p>Song: Headlines</p>
+                <p>Artist: Drake</p>
+                <p>Album: Take Care</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="scroll-list">
+          <div class="scroll-list__wrp js-scroll-content">
+            <div class="scroll-list__item js-scroll-list-item">
+              <a href="https://codepen.io/MarioDesigns/">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Ready_To_Die.jpg/220px-Ready_To_Die.jpg"
+                  alt="Skytsunami" />
+              </a>
+              <div class="song">
+                <p>Song: Headlines</p>
+                <p>Artist: Drake</p>
+                <p>Album: Take Care</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     
   </div>
