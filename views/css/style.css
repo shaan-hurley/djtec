@@ -20,14 +20,7 @@ button, input {
   max-width: 1000px;
 }
 
-.nav {
-  position: fixed;
-  z-index: 3;
-  height: 60px;
-  width: 100%;
-  -webkit-transition: 300ms ease;
-  transition: 300ms ease;
-}
+
 
 .brand {
   float: left;
@@ -161,7 +154,6 @@ button, input {
   z-index: 1;
   height: 100vh;
   max-height: 1080px;
-  background-image: url(http://unsplash.it/g/1280/721);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -233,7 +225,7 @@ a:hover {
 }
 
 .main {
-  background: #f8f8f8;
+  background: #000000;
 }
 .main .row, .main .tab-row {
   min-height: 200px;
@@ -249,7 +241,6 @@ a:hover {
 }
 
 .feature {
-  background-image: url(http://unsplash.it/g/1280/722);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
