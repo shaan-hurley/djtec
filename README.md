@@ -1,6 +1,16 @@
 # Juniors Spring Intensive Deliverable Proposal
 
-## TODO: copy this file, fill it out, and push it up to your project's repo.
+## Installation
+
+Clone the repo
+
+Enter npm i --save in terminal with same directory
+
+enter node app,js to run server
+
+# Online Website
+
+dj-tech.herokuapp.com
 
 Dates 3/16-3/25
 
