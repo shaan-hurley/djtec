@@ -1,3 +1,17 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 100px);
+}
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&subset=latin-ext");
 html {
     position: relative;
@@ -19,33 +33,51 @@ a:hover {
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    max-width: 5em;
+    max-height: 5em;
+}
+
+.userpic {
+    height: 75px;
+    width: 75px;
+    background-color: #a8a8a8;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.song {
+    color: white;
+    position: relative;
+    font-size: 8px;
+}
+
 .wrapper {
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
 }
 
 .scroll-list {
     width: 100%;
     max-width: 700px;
-    padding: 25px;
-    margin-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
     margin-left: auto;
     margin-right: auto;
 }
 
-@media screen and (max-width: 768px) {
-    .scroll-list {
-        margin-top: 20px;
-    }
-}
-
 .scroll-list__wrp {
     width: 100%;
-    height: 700px;
+    height: 100%;
+    max-height: 700px;
     overflow: auto;
-    padding: 50px;
+    padding: 25px;
     box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45);
     background: #4b1079;
     background: #4b1079;
@@ -58,27 +90,22 @@ a:hover {
     display: none !important;
 }
 
-@media screen and (max-width: 768px) {
-    .scroll-list__wrp {
-        padding: 25px;
-    }
-}
-
 .scroll-list__item {
     width: 100%;
-    height: 155px;
-    display: block;
-    margin-bottom: 15px;
-    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
     background-image: linear-gradient(147deg, #ff7c34 0%, #c31269 74%);
     transition: all .35s ease-in-out;
-    opacity: 0;
-    transform: scale(0.7);
+    opacity: 1;
+    transform: scale(1);
     box-shadow: 0px 7px 16px 0px rgba(41, 53, 108, 0.25);
 }
 
 .scroll-list__item.item-hide {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.7);
 }
 
@@ -99,4 +126,38 @@ a:hover {
 
 .scroll-list__item:last-child {
     margin-bottom: 155px;
+}
+
+
+/* Second Scroll List */
+
+.wrapper-2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
+}
+
+.scroll-list-2 {
+    width: 100%;
+    max-width: 700px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scroll-list__wrp-2 {
+    width: 100%;
+    height: 100%;
+    max-height: 700px;
+    overflow: auto;
+    padding: 25px;
+    box-shadow: 0px 7px 46px 0px rgba(41, 53, 108, 0.45);
+    background: #4b1079;
+    background: #4b1079;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-image: linear-gradient(147deg, #6e0777 0%, #380c70 74%);
 }
