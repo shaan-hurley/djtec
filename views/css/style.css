@@ -247,7 +247,7 @@ a:hover {
   position: relative;
   z-index: 1;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 .feature:after {
   content: "";
@@ -256,8 +256,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: -webkit-gradient(linear, left top, right bottom, from(#ee8822), to(#11eebb));
-  background: linear-gradient(to bottom right, #ee8822, #11eebb);
+  background: -webkit-gradient(linear, left top, right bottom, from(#28e), to(#e14));
+  background: linear-gradient(to bottom right, #28e, #e14);
   opacity: 0.9;
   z-index: -1;
 }
@@ -325,10 +325,25 @@ button.cta:hover {
 
 .logo {
   background: url(logo.png);
-  width: 180px;
-  height: 180px;
-  left: 50%;
+  width: 600px;
+  height: 600px;
   position: relative;
-  margin-left: -90px;
-  background-size: 180px;
+  background-size: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
 }

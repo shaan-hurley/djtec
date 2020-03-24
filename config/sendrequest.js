@@ -106,8 +106,7 @@ function displaySongsString(data) {
         <li>
             <div>
                 <img class="header-image"  style="height:100px;width:100px"src='${imgUrl}' alt="logo">
-                <h5>${item.track.name}</h>
-                <h6>by:${item.track.artists[0].name}</h6>
+                <h5> ${item.track.artists[0].name} - ${item.track.name}</h5>
             </div>
             <div>
                 <button 
@@ -115,6 +114,7 @@ function displaySongsString(data) {
                     type="submit" 
                     class="btn-outline-success change_song">Add Track
                 </button>
+                <br>
             </div>
         </li>`
     })

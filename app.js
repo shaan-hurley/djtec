@@ -145,7 +145,6 @@ require('./controllers/queue_friends.js')(app, ensureAuthenticated);
 require('./data/djtec-db');
 
 app.get('/', function(req, res) {
-    console.log("i made to the index")
     res.render('index', { user: req.user });
 
 });
