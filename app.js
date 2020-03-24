@@ -6,9 +6,9 @@ const express = require('express'),
 
 var path = require('path');
 
-// const mongoose = require('mongoose')
-// const mongo_uri = process.env.MONGODB_URI
-// mongoose.connect(mongo_uri)
+const mongoose = require('mongoose')
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
 
 
 const consolidate = require('consolidate');
@@ -42,11 +42,11 @@ app.use(expressValidator());
 //   the user by ID when deserializing. However, since this example does not
 //   have a database of user records, the complete spotify profile is serialized
 //   and deserialized.
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 
@@ -56,15 +56,15 @@ passport.deserializeUser(function(obj, done) {
 //   and spotify profile), and invoke a callback with a user object.
 passport.use(
     new SpotifyStrategy({
-            clientID: keys.spotify.clientID,
-            clientSecret: keys.spotify.clientSecret,
-            callbackURL: 'http://localhost:3000/auth/spotify/callback',
-            //Uncomment when pushing to heroku, make sure to comment out the line above
-            // callbackURL: 'https://dj-tech.herokuapp.com/auth/spotify/callback'
-        },
-        function(accessToken, refreshToken, expires_in, profile, done) {
+        clientID: keys.spotify.clientID,
+        clientSecret: keys.spotify.clientSecret,
+        // callbackURL: 'http://localhost:3000/auth/spotify/callback',
+        //Uncomment when pushing to heroku, make sure to comment out the line above
+        callbackURL: 'https://dj-tech.herokuapp.com/auth/spotify/callback'
+    },
+        function (accessToken, refreshToken, expires_in, profile, done) {
             // asynchronous verification, for effect...
-            process.nextTick(function() {
+            process.nextTick(function () {
                 // To keep the example simple, the user's spotify profile is returned to
                 // represent the logged-in user. In a typical application, you would want
                 // to associate the spotify account with a user record in your database,
@@ -78,10 +78,10 @@ passport.use(
                             console.log(expires_in)
                             currentUser.spotifyToken = accessToken
                             currentUser.save()
-                                // profile.friendsList = currentUser.friendsList
-                                // profile.sentRequest = currentUser.sentRequest
-                                // profile.request = currentUser.request
-                                // profile.totalRequest = currentUser.totalRequest
+                            // profile.friendsList = currentUser.friendsList
+                            // profile.sentRequest = currentUser.sentRequest
+                            // profile.request = currentUser.request
+                            // profile.totalRequest = currentUser.totalRequest
                         } else {
                             new User({
                                 username: profile.displayName,
@@ -89,10 +89,10 @@ passport.use(
                                 spotifyToken: accessToken
                             }).save().then((newUser) => {
                                 console.log('new user created:' + newUser)
-                                    // profile.friendsList = newUser.friendsList
-                                    // profile.sentRequest = newUser.sentRequest
-                                    // profile.request = newUser.request
-                                    // profile.totalRequest = newUser.totalRequest
+                                // profile.friendsList = newUser.friendsList
+                                // profile.sentRequest = newUser.sentRequest
+                                // profile.request = newUser.request
+                                // profile.totalRequest = newUser.totalRequest
                             })
                         }
                     });
@@ -112,7 +112,7 @@ require('./socket/friend')(io);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
     helpers: {
-        ifIn: function(elem, list, options) {
+        ifIn: function (elem, list, options) {
             if (list.indexOf(elem) > -1) {
                 return options.fn(this);
             }
@@ -144,12 +144,12 @@ require('./controllers/queue_friends.js')(app, ensureAuthenticated);
 // Set db
 require('./data/djtec-db');
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render('index', { user: req.user });
 
 });
 
-app.get('/login', function(req, res) {
+app.get('/login', function (req, res) {
     res.render('login', { user: req.user });
 });
 
@@ -164,7 +164,7 @@ app.get(
         scope: ['user-read-email', 'user-read-private', 'user-modify-playback-state'],
         showDialog: true
     }),
-    function(req, res) {
+    function (req, res) {
         // The request will be redirected to spotify for authentication, so this
         // function will not be called.
     }
@@ -179,13 +179,13 @@ app.get(
 app.get(
     '/auth/spotify/callback',
     passport.authenticate('spotify', { failureRedirect: '/' }),
-    function(req, res) {
+    function (req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
     }
 );
 
-app.get('/logout', function(req, res) {
+app.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/');
 });
@@ -197,7 +197,7 @@ app.set('port', (process.env.PORT || 3000));
 // 	console.log('Server started on port '+app.get('port'));
 // });
 
-server.listen(app.get('port'), function() {
+server.listen(app.get('port'), function () {
     console.log('listening on port 3000');
 });
 
