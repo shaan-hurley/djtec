@@ -40,7 +40,7 @@ function getPlaylistData() {
 }
 
 function getSongsForPlaylist(url, id) {
-    $(`#song-result .songs`).hide();
+    $(`#song-result .scroll-content-2`).hide();
     let spotifytoken = $('#user_token1').val()
     $.ajax({
         url: url,
@@ -55,9 +55,9 @@ function getSongsForPlaylist(url, id) {
             let returnStr = '';
             returnStr += displaySongsString(data);
             console.log("checking returnStr", returnStr);
-            $(`#song-result .songs`).replaceWith(returnStr);
-            $(`#song-result .songs`).load();
-            $(`#song-result .songs`).show();
+            $(`#song-result .scroll-content-2`).replaceWith(returnStr);
+            $(`#song-result .scroll-content-2`).load();
+            $(`#song-result .scroll-content-2`).show();
             initScroll();
         }
     });
@@ -75,29 +75,31 @@ function addEventListenerToPlaylist() {
 
 //this function takes the data returned from playlists call,  and makes a row for each playlist
 function displayPlaylistsString(data) {
-    let returnStr = `<div class="wrapper" >
-    <div class="container scroll-list">
-    `;
+    let returnStr = ``;
 
     data.items.forEach(item => {
 
-        returnStr += `
-        <div class="  playlist " id="${item.id}" >
-            <div class="row ">
-                <img class="card-img-top playlist" src="${item.images[0].url}" style="max-width:250px; max-height:250px; padding: 20px;" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
+        returnStr += `<div class="scroll-list__item js-scroll-list-item">
+        <div class="playlist" id="${item.id}">
+                <img class="card-img-top playlist" src="${item.images[0].url}" alt="User Profile" id="${item.id}" data-songsUrl="${item.tracks.href}">
             </div>
-            
+
+        <div class="song">
+          <p>Song: Headlines</p>
+          <p>Artist: Drake</p>
+          <p>Album: Take Care</p>
+        </div>
         </div>
         `
 
     });
 
-    return returnStr + `</div></div>`;
+    return returnStr;
 }
 
 function displaySongsString(data) {
     console.log("checking data in displaysongsstring", data);
-    let returnStr = '<ul class="songs">';
+    let returnStr = '<ul class="scroll-content-2">';
     data.items.forEach(item => {
         let imgUrl = item.track.album.images.length > 0 ? item.track.album.images[0].url : "";
         returnStr += `
