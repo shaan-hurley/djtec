@@ -1,31 +1,66 @@
-{{#if user}}
-<h2 class="mui--text-accent-secondary mui--text-display2">Hello, {{ user.username }}</h2>
-{{else}}
-{{!-- <div class="jumbotron jumbotron-fluid">
-    <div class="jumbotron container">
-        <img class="header-image" src='/static/QueuedUP-logo1.png' alt="logo" style="max-width: 375px; max-height: 600px;">
-        <a href="/auth/spotify" class="btn btn-primary navbar-btn">Login With Spotify</a>
-        <p class="lead" style="text-align: center; padding: 1rem; color: lightslategrey; font-family: 'Montserrat', sans-serif;">Adding song to your friend's Spotify queue was never this EASY!</p>
-    </div>
-</div> --}}
-<div class="cover">
-    <div class="bg"></div>
-
-    <div class="title">
+<header class="hero">
+    <div class="content">
         <div class="logo">
         </div>
-        <div class="text">
-            DJ TECH
+        <p>DJ TECH</p>
+        <p>An application that bridges the gap between Dj and listener</p>
+        <button onclick="window.location.href = '/auth/spotify';" class="cta">Login/Register</button>
+    </div>
+</header>
+
+<main class="main">
+
+    <section>
+        <div class="tab-row">
+            <div class="col-12">
+                <h2>Inspiration</h2>
+                <p>For generations Dj's have played a vital role in the party setting. Dj's must determine the best choice of music for the party
+                    and must stay up to date with current music trends. Often times the Dj do not end up playing key songs that would greatly please the crowd
+                    they are serving. Since the Dj dictates the vibe of the party, why don't we let the party goers in on the action.
+                 </p>
+            </div>
+    </section>
+    <section class="feature">
+        <div class="tab-row">
+            <div class="col-12">
+                <h2>Intention</h2>
+                <p>Dj Tech gives you the capability to connect with the Dj. The main homepage will display
+                    the current Dj's playlist along with a user resquest section. You can send a song request to the Dj or 
+                    vote from the current list of songs chosen by other users. Dj Tech's main goal is to have a personalized experience
+                    along with making the Dj's life easier.
+                     </p>
+            </div>
         </div>
-        <div class="desc">
-            Welcome to DJ Tech. A revolutionary app that connects you to your DJ.
+        </div>
+    </section>
+    <section>
+        <h1>Team</h1>
+        <div class="row">
+            <div class="col-4">
+                <h2>Shaan Hurley</h2>
+                <p>Lead Front-End engineer</p>
+            </div>
+            <div class="col-4">
+                <h2>Youssef Sawiris</h2>
+                <p>Lead Back-End engineer</p>
+            </div>
+            <div class="col-4">
+                <h2>Farhan Begg</h2>
+                <p>Lead UI Design</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="row">
+        <div class="col-12" style="text-align: right;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi a unde iste harum quis veritatis
+                laudantium tempora, error veniam, incidunt?</p>
         </div>
     </div>
-</div>
-
-<div class="social">
-    <a href="" target="_blank">Home</a>
-    <a href="" target="_blank">Login</a>
-    <a href="" target="_blank">Sign Up</a>
-</div>
-{{/if}}
+    <hr>
+    <div class="row">
+        <div class="col-12">&copy; 2020 Dj Tech - <a href="#">Facebook</a> - <a href="#">Twitter</a></div>
+    </div>
+</footer>

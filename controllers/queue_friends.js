@@ -3,7 +3,7 @@ var async = require('async');
 
 module.exports = (app, ensureAuthenticated) => {
 
-    app.get('/account/DJ', ensureAuthenticated, function(req, res) {
+    app.get('/account/DJ/', ensureAuthenticated, function(req, res) {
         const currentUser = req.user.id;
 
         User.findOne({ 'spotifyId': currentUser })

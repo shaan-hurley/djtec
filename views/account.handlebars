@@ -4,6 +4,7 @@
     <a href=" {{ user.profileUrl }}">{{ user.profileUrl }}</a>
 </p>
 <img src="{{ user.photos }}">  --}}
+<<<<<<< HEAD
 
 
 <div class="mui-row">
@@ -46,52 +47,34 @@
 
 <div class="wrapper">
     <div class="scroll-list__wrp js-scroll-content js-scroll-list">
-    </div>
-</div>
+=======
+<div class="container">
+    <p class="neon">Dj Playlist</p>
+    <input type="hidden" name="user_token1" id="user_token1" value="{{ user.spotifyToken }}">
+    <input type="hidden" name="user_token2" id="user_token2" value="{{ user.spotifyToken }}">
+    <div class="wrapper">
+      <div class="scroll-list">
+        <div class="scroll-list__wrp js-scroll-content">
+          <div class="scroll-content" id="result">
 
-    <div class="mui-col-md-4 float-right">
-       <div class="card" style="background: transparent">
-            <div class="card-body" style="color:white">
-                <h4 class="card-title" >User Requests</h4>
-                {{#if user.request}}
-                {{#each newfriend}}
-                <li style="border-bottom: 1px solid lightgray">
-                        <div>
-                        <h4>{{this.username}}</h4>
-                        </div>
-                        <div>
-                            <div style="width: 50%; display: inline;">
-                            <input type="hidden" name="senderId" id="senderId" value="{{this.userId}}">
-                            <input type="hidden" name="senderName" id="senderName" value="{{this.username}}">
-                            <button type="submit" id="accept_friend" class="btn btn-primary" style="width: 8em">Accept</button>
-                            </div>
-                            <div style="width: 50%;  display: inline;">
-                                <input type="hidden" name="user_Id" id="user_Id" value="{{this.userId}}">
-                            <button type="submit" id="cancel_friend" class="btn btn-primary" style="width: 8em">Cancel</button>
-                            </div>
-                        </div>    
-                </li>
-                {{/each}}
-                {{else}}
-            <h4 >No requests</h4>
-            {{/if}}
-            </div>
+          </div>
         </div>
+      </div>
+>>>>>>> f1efe24b987038d7f7ee587cc74e2b8623f158ba
     </div>
-</div>
+    <div class="wrapper-2">
+      <div class="scroll-list-2">
+        <div class="scroll-list__wrp-2 js-scroll-content" id="song-result">
+          <div class="scroll-content-2">
 
-
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <ul>
-            {{#each friends}}
-                <li class="list-group-item">
-                    <div class="lead"><a href="/friends/{{this.friendId}}">{{this.friendName}}</a></div>
-                </li>
-            {{/each}}
-        </ul>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+
+    
+  </div>
+
 
 
 
