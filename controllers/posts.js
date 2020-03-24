@@ -34,7 +34,7 @@ module.exports = (app, ensureAuthenticated) => {
     });
 
     // INDEX
-    app.get('/posts', ensureAuthenticated, function(req, res) {
+    app.get('/posts/user', ensureAuthenticated, function(req, res) {
         const currentUser = req.user.id;
 
         User.findOne({ 'spotifyId': currentUser })
